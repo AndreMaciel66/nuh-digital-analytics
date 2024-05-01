@@ -17,14 +17,14 @@ for indice, linha in df_anexo_1.iterrows():
 
     folium.CircleMarker(
         location=[linha['Latitude'], linha['Longitude']],
-        radius=3,  # Define o tamanho do marcador
+        radius=1,  # Define o tamanho do marcador
         color=cor_do_marcador,
         fill=True,
         fill_color=cor_do_marcador,
-        fill_opacity=0.4,
+        fill_opacity=0.7,
         popup=f"{linha['Nome da Escola']}<br>Velocidade DL: {linha['Velocidade DL (Mbps)']} Mbps<br>Solução: {linha['Solução proposta']}",
         tooltip=linha['Nome da Escola']
     ).add_to(mapa)
 
 # Salva o mapa em um arquivo HTML
-mapa.save('mapa_escolas.html')
+mapa.save('mapa_escolas.html', auto_open=True)
