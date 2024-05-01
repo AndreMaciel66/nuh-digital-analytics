@@ -17,7 +17,7 @@ for indice, linha in df_anexo_1.iterrows():
 
     folium.CircleMarker(
         location=[linha['Latitude'], linha['Longitude']],
-        radius=1,  # Define o tamanho do marcador
+        radius=2,  # Define o tamanho do marcador
         color=cor_do_marcador,
         fill=True,
         fill_color=cor_do_marcador,
@@ -27,4 +27,4 @@ for indice, linha in df_anexo_1.iterrows():
     ).add_to(mapa)
 
 # Salva o mapa em um arquivo HTML
-mapa.save('mapa_escolas.html', auto_open=True)
+mapa.save('mapa_escolas.html')
